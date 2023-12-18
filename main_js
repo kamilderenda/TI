@@ -1,0 +1,4 @@
+function changePhelp() {
+    let par=document.getElementById("help");
+    par.innerHTML = "witam";
+}
