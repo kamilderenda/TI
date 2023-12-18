@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    background-image: url("tlo_jasniej.PNG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    font-family: 'Passion One', sans-serif;
+    color: orangered;
+    font-size: 75px;
+    margin: 10px 0 2px 0;
+    padding: 10px;
+    text-shadow: 4px 4px 4px navy;
+    -webkit-text-stroke-color: darkred;
+    -webkit-text-stroke-width: thin;
+}
+
+#podtytul {
+    text-align: center;
+    margin-top: 4px;
+    font-family: 'Courgette', cursive;
+    color: RGB(1, 9, 43);
+}
+
+
+#main_box {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+}
+
+.main_circle {
+    background-image: url("boja.png");
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    background-size: 300px;
+    margin-left: 80px;
+    margin-right: 80px;
+    display: flex;
+    border-radius: 50%;
+    justify-content: center;
+    transition: transform .2s linear;
+}
+
+.main_circle p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .15s linear;
+    font-family: 'Passion One', sans-serif;
+    color: navy;
+    font-size: 40px;
+    text-shadow: 2px 2px 3px orangered;
+    -webkit-text-stroke-color: RGB(1, 9, 43);
+    -webkit-text-stroke-width: thin;
+
+}
+
+.main_circle:hover {
+    animation: rotate_sizeup 2s forwards;
+}
+
+@keyframes rotate_sizeup {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg) scale(1.3)}
+}
