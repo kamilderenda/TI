@@ -1,1 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index_css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Kalam:wght@300;400&family=Passion+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <script src="index_js.js"></script>
+    <title>Strona ratownicza</title>
+</head>
+<body>
 
+<header>Bezpieczne pływanie</header>
+<h2 id="podtytul">Bo jak pływać, to z głową!</h2>
+
+<div id="main_box">
+    <div class="main_circle" onmouseover="changePhelp()">
+        <p id="help">
+        POMOC
+        </p>
+    </div>
+
+    <div class="main_circle" onmouseover="changePhelp()">
+    <p id="num">
+        NUMERY
+    </p>
+    </div>
+
+    <div class="main_circle" onmouseover="changePhelp()">
+    <p id="bhv">
+        ZACHOWANIE
+    </p>
+    </div>
+
+
+</div>
+
+</body>
+</html>
