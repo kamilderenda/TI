@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style_numery.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Passion+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Kalam:wght@300;400&family=Passion+One&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <script src="index_js.js"></script>
+    <title>Strona ratownicza</title>
+</head>
+<body>
+    <header>Bezpieczne pływanie</header>
+    <h2 id="podtytul">Bo jak pływać, to z głową!</h2>
+    <div id="main_box">
+        <div class="numery_circle" onclick="showNumber(event, '997')">
+            <span class="opis_numeru">Policja</span>
+            <div class="info">Numer Policji: 997. Zadzwoń, jeśli widzisz agresywne zachowanie lub podejrzewasz popełnienie przestępstwa.</div>
+        </div>
+        <div class="numery_circle" onclick="showNumber(event, '998')">
+            <span class="opis_numeru">Straż Pożarna</span>
+            <div class="info">Numer Straży Pożarnej: 998. Zadzwoń, jeśli widzisz tłoczący się płomień.</div>
+        </div>
+        <div class="numery_circle" onclick="showNumber(event, '999')">
+            <span class="opis_numeru">Pogotowie Ratunkowe. </span>
+            <div class="info">Numer Pogotowia Ratunkowego: 999. Zadzwoń przy każdym urazie zagrażającym życiu lub zdrowiu.</div>
+        </div>
+    </div>
+
+    <script>
+        function showNumber(event, number) {
+            let numeryCircles = document.querySelectorAll('.numery_circle');
+
+            numeryCircles.forEach(circle => {
+                if (circle.classList.contains('active') && !circle.querySelector('.info').contains(event.target)) {
+                    circle.classList.remove('active');
+                }
+            });
+
+            let selectedCircle = document.querySelector(`.numery_circle:nth-child(${number - 996})`);
+            if (selectedCircle.classList.contains('active')) {
+                selectedCircle.classList.remove('active');
+            } else {
+                selectedCircle.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

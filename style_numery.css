@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    background-image: url("woda.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    font-family: 'Passion One', sans-serif;
+    color: orangered;
+    font-size: 75px;
+    margin: 10px 0 2px 0;
+    padding: 10px;
+    text-shadow: 4px 4px 4px navy;
+    -webkit-text-stroke-color: darkred;
+    -webkit-text-stroke-width: thin;
+}
+
+span {
+    color: navy;
+    font-size: 50px;
+    font-family: 'Courgette', cursive;
+    text-shadow: 2px 2px 2px lightblue;
+}
+
+#podtytul {
+    text-align: center;
+    margin-top: 4px;
+    font-family: 'Courgette', cursive;
+    color: RGB(1, 9, 43);
+}
+
+#main_box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+    border: 3px solid gray;
+    background-color: aliceblue;
+    margin: 3px;
+    border-radius: 10px;
+    width: 80%;
+    padding: 20px; /* Dodatkowy padding dla estetyki */
+}
+
+.numery_circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100px; /* Ustawienie wysokości */
+    border: 2px solid gray;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative; /* Dodaj pozycję względną, aby kontrolować .info */
+}
+
+.opis_numeru {
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    text-align: center;
+    transition: color 1s ease-in-out;
+}
+
+.info 
+{
+    transform: rotateY(180deg); /* Zaczyna odwróconą */
+    position: absolute; /* Ustawienie na absolutne dla animacji */
+    backface-visibility: hidden;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    align-items: center;
+    width: 100%;
+    height: 100px; /* Ustawienie wysokości */
+    border: 2px solid gray;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 1s ease; 
+    
+    /*top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    height: 100%;
+    background-color: #fff;
+    border: 2px solid #333;
+    padding: 10px;
+    border-radius: 5px;
+    transition: transform 0.5s ease;  Dodanie animacji transformacji */
+}
+
+.numery_circle.active .info {
+    transform: rotateY(0deg); /* Obróć z powrotem na 0 stopni */
+}
+
+.opis_numeru:hover {
+    color: orangered;
+}
+
+.numery_circle:nth-child(3) {
+    background-color: white; /* Dla pogotowia - czerwone tło */
+}
+
+.numery_circle:nth-child(1) {
+    background-color: #0000ff; /* Dla policji - niebieskie tło */
+}
+
+.numery_circle:nth-child(2) {
+    background-color: #ff0000; /* Dla straży pożarnej - zielone tło */
+}
