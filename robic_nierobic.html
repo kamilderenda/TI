@@ -13,8 +13,7 @@
     <title>Strona ratownicza</title>
 
     <style>
-        div
-        {
+        .sytuacje {
             width: 1000px;
             height: 500px;
             display: flex;
@@ -27,16 +26,24 @@
             border-radius: 8px;
             background-color: aliceblue;
         }
-        .robic
-        {
+
+        .robic {
             color: green;
         }
-        .nierobic
-        {
+
+        .nierobic {
             color: red;
         }
 
-        
+        .info {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Dodanie efektu przejścia */
+            font-size: 60px; /* Zmniejszamy rozmiar czcionki dla elementów .info */
+        }
+
+        .info.visible {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -44,12 +51,48 @@
 <header>Bezpieczne pływanie</header>
 <h2 id="podtytul">Bo jak pływać, to z głową!</h2>
 
-<div class="robic" onclick="location.href='link_do_pierwszej_podstrony.html'">
-    Co robić?
+<div class="sytuacje" onclick="pokazInfo(this, 1)">
+    <span class="robic">Co robić? </span>
+    <div class="info">
+       
+    </div>
+    
 </div>
-<div class="nierobic" onclick="location.href='link_do_drugiej_podstrony.html'">
-    Czego nie robić!
+
+<div class="sytuacje" onclick="pokazInfo(this, 2)">
+    <span class="nierobic">Czego nie robić? </span>
+    <div class="info">
+        
+    </div>
 </div>
+<script>
+    function pokazInfo(element, numerTablicy) {
+        var tab1=["nie pij alkoholu","nie wchodź do wody po posiłku"];
+        var tab2=["smaruj się kremem z filtrem","regularnie się nawadniaj"];
+
+        var losowyElement;
+        if (numerTablicy === 1) {
+            losowyElement = tab1[Math.floor(Math.random() * tab1.length)];
+            element.style.backgroundColor = 'green';
+        } else if (numerTablicy === 2) {
+            losowyElement = tab2[Math.floor(Math.random() * tab2.length)];
+            element.style.backgroundColor = 'red';
+        }
+
+        var spans = element.querySelectorAll('span');
+        spans.forEach(function(span) {
+            span.style.display = 'none';
+        });
+
+        var infoDiv = element.querySelector('.info');
+        infoDiv.classList.remove('visible'); // Usunięcie klasy 'visible'
+        
+        setTimeout(function() {
+            infoDiv.innerText = losowyElement;
+            infoDiv.classList.add('visible'); // Dodanie klasy 'visible'
+        }, 500);
+    }
+</script>
 
 </body>
 </html>
